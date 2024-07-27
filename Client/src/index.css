@@ -4,3 +4,8 @@
   font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
+body{
+
+  height: 100vh;
+  /* background-color: #f1f1f1; */
+}
