@@ -4,13 +4,15 @@ import Banner from '../../components/Banner/Banner'
 import Footer from '../../components/Footer/Footer'
 import Bookcards from '../../components/Bookscard/Bookcards'
 import BookList from './../../BookList.json'
+import Login from '../../components/Login/Login'
 
 function Home() {
-  
+
   const freeBooks = BookList.ebooks.filter((data) => data.category === "free")
   return (
-    <>     
-     <Navbar />
+    <>
+      <Navbar />
+      <Login/>
       <Banner />
       <div className='container p-3 shadow'>
         <h1 className='my-3'>Books Available at free</h1>

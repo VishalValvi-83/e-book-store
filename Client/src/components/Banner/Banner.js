@@ -12,7 +12,6 @@ function Banner() {
                 <a href='/' className='btn w-25 btn-danger'>Read</a>
                 <a href='/' className='btn w-25 ms-3 btn-danger'>Write</a>
                 </div>
-
                 </div>
                 <div className='col-md-6 order-sm-1 right'>
                     <img className='banner-img img-fluid' src={BannerImg} alt='' />

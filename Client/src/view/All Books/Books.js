@@ -16,7 +16,7 @@ function Books() {
             <ul class="list-inline p-0 gap-4 d-flex flex-wrap justify-content-center search-menu-options">
               <li class="search-menu-opt">
                 <select class="form-control form-select form-search-control bg-white border-0" >
-                  <option selected>All</option>
+                  <option defaultValue="All">All</option>
                   <option>A Books</option>
                   <option>the Sun</option>
                   <option>Harsh book</option>
@@ -26,7 +26,7 @@ function Books() {
               </li>
               <li class="search-menu-opt">
                 <select class="form-control form-select form-search-control bg-white border-0">
-                  <option selected>Genres</option>
+                  <option defaultValue="Genres">Genres</option>
                   <option>General</option>
                   <option>History</option>
                   <option>Horror</option>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import Login from '../Login/Login'
 function Navbar() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     const element = document.documentElement
@@ -38,14 +39,14 @@ function Navbar() {
                             </li>
                         </ul>
                         <div className="d-flex" role="search">
-                            <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                            <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success me-3" type="submit">Search</button>
                         </div>
-                        <button className='btn btn-outline-warning'>Login</button>
+                        <button className='btn btn-outline-warning' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
                     </div>
                     <label id="theme-toggle-button">
                         <input onClick={swithchTheme} type="checkbox" id="toggle" />
-                        <svg viewBox="0 0 80 40" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 120 40" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                             <g transform="translate(3.5 3.5)" data-name="Component 15 – 1" id="Component_15_1">
 
 
@@ -101,6 +102,7 @@ function Navbar() {
                     </label>
                 </div>
             </nav>
+            <Login />
         </div>
     )
 }
