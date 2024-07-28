@@ -1,0 +1,64 @@
+{
+  "ebooks": [
+    {
+      "id": 1,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780061120084",
+      "language" : "English",
+      "publication_year": 1960,
+      "genre": "Fiction",
+      "description": "A novel about the serious issues of rape and racial inequality narrated by young Scout Finch.",
+      "image_url": "https://img.freepik.com/free-vector/abstract-watercolor-squared-frame_23-2149090424.jpg?w=740&t=st=1722149924~exp=1722150524~hmac=cea6ce6829adeda27538557210a7ee0549c7b07f74d5b47d0d406fdbad3ad794"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "category" : "free",
+      "isbn": "9780451524935",
+      "language" : "English",
+      "publication_year": 1949,
+      "genre": "Dystopian",
+      "description": "A story about government surveillance and mind control in a totalitarian society.",
+      "image_url": "https://img.freepik.com/free-vector/abstract-watercolor-squared-frame_23-2149090424.jpg?w=740&t=st=1722149924~exp=1722150524~hmac=cea6ce6829adeda27538557210a7ee0549c7b07f74d5b47d0d406fdbad3ad794"
+    },
+    {
+      "id": 3,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "category" : "free",
+      "language" : "English",
+      "publication_year": 1925,
+      "genre": "Fiction",
+      "description": "A novel about the American dream and the disillusionment that comes with it.",
+      "image_url": "https://img.freepik.com/free-vector/abstract-watercolor-squared-frame_23-2149090424.jpg?w=740&t=st=1722149924~exp=1722150524~hmac=cea6ce6829adeda27538557210a7ee0549c7b07f74d5b47d0d406fdbad3ad794"
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn": "9781503290563",
+      "language" : "English",
+      "category" : "free",
+      "publication_year": 1813,
+      "genre": "Romance",
+      "description": "A romantic novel that critiques the British landed gentry at the end of the 18th century.",
+      "image_url": "https://img.freepik.com/free-vector/abstract-watercolor-squared-frame_23-2149090424.jpg?w=740&t=st=1722149924~exp=1722150524~hmac=cea6ce6829adeda27538557210a7ee0549c7b07f74d5b47d0d406fdbad3ad794"
+    },
+    {
+      "id": 5,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780547928227",
+      "category" : "free",
+      "publication_year": 1937,
+      "language" : "English",
+      "genre": "Fantasy",
+      "description": "A fantasy novel about the adventures of Bilbo Baggins, a hobbit who sets out on an epic journey.",
+      "image_url": "https://img.freepik.com/free-vector/abstract-watercolor-squared-frame_23-2149090424.jpg?w=740&t=st=1722149924~exp=1722150524~hmac=cea6ce6829adeda27538557210a7ee0549c7b07f74d5b47d0d406fdbad3ad794"
+    }
+  ]
+  }
+  
