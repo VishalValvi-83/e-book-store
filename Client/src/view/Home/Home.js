@@ -15,7 +15,7 @@ function Home() {
       <Banner />
       <div className='container'>
       <h1>Books Available at free</h1>
-      <div className='row d-flex justify-content-center'>
+      <div className='row row-cols-1 row-cols-md-3 g-4'>
         {
           freeBooks.map((book, i) => {
             const {
