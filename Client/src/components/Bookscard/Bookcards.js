@@ -7,17 +7,19 @@ function Bookcards({
   author,
   publication_year,
   genre,
+  category,
   language,
 }) {
   return (
-    <div className="col">
-      <div class="card" key={id} >
-        <img src={image_url} class=" card-img img-fluid card-img-top" alt={title} />
-        <div class="card-body">
-          <h5 class="card-title">{title}</h5>
-          <p class="card-text"> {author} | {publication_year}</p>
-          <p class="card-text">{genre} | {language}</p>
-          <a href="/" class="btn btn-primary">Borrow</a>
+    <div className="col" >
+      <div className="card" key={id} >
+        <img src={image_url} className=" card-img img-fluid card-img-top" alt={title} />
+        <div className="card-body">
+          <h5 className="card-title">{title}  <span className="badge text-bg-success">{category}</span></h5>
+          <p className="card-text"> {author} | {publication_year}</p>
+          <p className="card-text">{genre} | {language}</p>
+         
+          <a href="/" className="btn btn-primary">Borrow</a> 
         </div>
       </div>
     </div>
