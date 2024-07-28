@@ -6,12 +6,11 @@ import Bookcards from '../../components/Bookscard/Bookcards'
 import BookList from './../../BookList.json'
 
 function Home() {
-  // Fetch data from the API or local JSON file and map it to Bookcards component.
-  // Use useEffect hook to fetch data when the component mounts.
+  
   const freeBooks = BookList.ebooks.filter((data) => data.category === "free")
   return (
-    <>
-      <Navbar />
+    <>     
+     <Navbar />
       <Banner />
       <div className='container p-3 shadow'>
         <h1 className='my-3'>Books Available at free</h1>

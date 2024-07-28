@@ -1,6 +1,22 @@
-.card{
-    width: 210px;
+.dark {
+    background-color: #202020;
+    color: #fff;
 }
+
+.dark .card-body {
+    background-color: #202020;
+    color: #fff;
+}
+
+.light {
+    background-color: #f9f9f9;
+    color: #202020;
+}
+
+.light .card-body {
+    background-color: #fff;
+}
+
 .card-img {
     height: 150px;
     width: 160px;
@@ -14,26 +30,29 @@
     margin-bottom: 5px;
 
 }
-.card-body{
+
+.card-body {
     padding: 10px;
 }
+
 .author-publication {
     margin-top: 10px;
     font-size: 13px;
-    color: #777;
+
 }
 
 .genre {
     margin-top: 5px;
     font-size: 12px;
-    color: #999;
     font-weight: bold;
 }
-.free-badge{
+
+.free-badge {
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 @media screen and (max-width: 640px) {
     .card-img {
         height: 100px;

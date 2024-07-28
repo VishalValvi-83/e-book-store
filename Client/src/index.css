@@ -12,3 +12,19 @@ body{
 a{
   cursor: pointer;
 }
+.dark{
+  background-color: #202020 !important;
+  color: #fff !important;
+  transition: all ease-out .3s !important;
+}
+.light{
+  background-color: #fff !important;
+  color: #202020 !important;
+  transition: all ease-out .3s !important;
+}
+.navbar-dark{
+  background-color: #202020 !important;
+  color: #fff !important;
+  transition: all ease-out .3s !important;
+
+}
