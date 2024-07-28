@@ -4,3 +4,20 @@
     object-fit: cover;
     margin: 10px auto;
 }
+.card-title{
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 5px;
+
+}
+.author-publication{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+.genre{
+    margin-top: 5px;
+    font-size: 13px;
+    color: #999;
+    font-weight: bold;
+}
