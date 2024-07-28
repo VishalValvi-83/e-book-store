@@ -1,0 +1,12 @@
+.signup-form {
+    width: 500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.dark .signup-form .label {
+    color: #202020 ;
+}
+@media screen and (max-width:576px) {
+    .signup-form {
+        width: 100%;
+    }
+}

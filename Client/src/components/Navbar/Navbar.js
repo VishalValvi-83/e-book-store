@@ -16,7 +16,7 @@ function Navbar() {
             localStorage.removeItem("theme", "light")
             document.body.classList.remove("dark")
         }
-    }, [theme])
+    }, [theme,  element.classList])
 
     const swithchTheme = () => {
         setTheme(theme === "light" ? "dark" : "light")
@@ -29,7 +29,7 @@ function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a className="navbar-brand" href="/">Books</a>
+                        <Link className="navbar-brand" href="/">Books</Link>
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
@@ -40,9 +40,9 @@ function Navbar() {
                         </ul>
                         <div className="d-flex" role="search">
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success me-3" type="submit">Search</button>
+                            <button className="btn btn-success me-3" type="submit">Search</button>
                         </div>
-                        <button className='btn btn-outline-warning' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                        <button className='btn btn-warning' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
                     </div>
                     <label id="theme-toggle-button">
                         <input onClick={swithchTheme} type="checkbox" id="toggle" />
