@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import './Footer.css'
 function Footer() {
     return (
-        <><footer className="container-fluid pt-2">
+        <><footer className="container-fluid mt-4 pt-2">
             <div className='container d-flex flex-column text-center'>
                 <div className="d-flex justify-content-center flex-wrap gap-4 my-3">
-                    <a href='/' className="footer-link">Home</a>
-                    <a href='/' className="footer-link">Contact</a>
-                    <a href='/' className="footer-link">About</a>
+                    <Link href='/' className="footer-link">Home</Link>
+                    <Link href='/books' className="footer-link">Books</Link>
+                    <Link href='/' className="footer-link">About</Link>
                 </div>
                 <div className="d-flex justify-content-center mb-3 flex-wrap gap-4">
                     <a>

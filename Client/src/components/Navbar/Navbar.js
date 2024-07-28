@@ -1,5 +1,7 @@
 import React from 'react'
 // import searchIcon from './search.png'
+
+import { Link } from'react-router-dom'
 import './Navbar.css'
 function Navbar() {
     return (
@@ -13,10 +15,10 @@ function Navbar() {
                         <a className="navbar-brand" href="/">Books</a>
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Link</a>
+                                <Link className="nav-link" to="/books">Books</Link>
                             </li>
                         </ul>
                         <div className="d-flex" role="search">
