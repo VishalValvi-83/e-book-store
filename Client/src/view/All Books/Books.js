@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Books.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
-import BookList from './../../BookList.json'
 import Bookcards from '../../components/Bookscard/Bookcards'
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 function Books() {
+  const [books, setBooks] = useState([])
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        toast.loading("Loading Books") 
+
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+        setTimeout(() => {
+          toast.dismiss()
+          toast.success("Books fetched successfully")
+          setBooks(response.data.data)
+        }, 1000);
+
+      }
+      catch (err) {
+        console.error(err)
+      }
+    }
+    getBook();
+  }, []);
+
+
   return (
     <>
       <Navbar />
@@ -55,7 +78,7 @@ function Books() {
           </div>
           <div className="books-list row-cols-1 row row-cols-xl-5 row-cols-md-4 g-4">
             {
-              BookList.ebooks.map((book, i) => (
+              books.map((book, i) => (
                 <Bookcards key={i} {...book} />
               ))
             }

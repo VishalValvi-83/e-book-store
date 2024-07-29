@@ -17,28 +17,45 @@
     background-color: #fff;
 }
 
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    height: 200px;
+    width: 100%;
+}
+.card{
+    padding: 0;
+    height: 180px;
+    width: auto;
+    overflow: hidden;
+}
 .card-img {
-    height: 150px;
-    width: 160px;
-    object-fit: cover;
-    margin: 10px auto;
+    height: 200px;
+    width: 100px;
+    object-fit: contain;
+    margin: 0 auto;
 }
 
 .card-title {
-    font-size: 17px;
+    text-transform: capitalize;
+    font-size: 13.5px;
     font-weight: 600;
-    margin-bottom: 5px;
-
+    height: 40px;
 }
-
+.price{
+    height: 25px;
+}
 .card-body {
     padding: 10px;
 }
 
 .author-publication {
     margin-top: 10px;
-    font-size: 13px;
-
+    font-size: 12px;
+    height: 25px;
 }
 
 .genre {
@@ -54,8 +71,12 @@
 }
 
 @media screen and (max-width: 640px) {
+    .card{
+        width: 300px;
+        height: 400px;
+    }
     .card-img {
-        height: 100px;
+        height: 100%;
         width: 120px;
     }
 
