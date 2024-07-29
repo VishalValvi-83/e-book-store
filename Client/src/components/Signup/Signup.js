@@ -7,10 +7,14 @@ function Signup() {
     return (
         <>
             <Navbar />
-            <div className='container-fluid '>
+            <div className='container-fluid sigup-form-container'>
                 <div className='container-md shadow border rounded signup-form mt-5 py-4'>
                     <h3>Signup</h3>
                     <div className='my-5 mx-3'>
+                        <div className='form-group mb-3'>
+                            <label for="full_name">Name </label>
+                            <input type="text" class="form-control " id="full_name" placeholder="Enter name" />
+                        </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control " id="floatingInput" placeholder="name@example.com" />
                             <label className='label' for="floatingInput ">Email address</label>
