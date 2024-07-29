@@ -6,7 +6,8 @@ import Home from './view/Home/Home';
 import Books from './view/All Books/Books';
 import Signup from './components/Signup/Signup';
 import { Toaster } from 'react-hot-toast';
-import ViewBook from './view/ViewBooks/ViewBook';
+import ViewBook from './view/ViewBook/ViewBook';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     element: <Signup />
   },
   {
-    path: "/books/view-book/:id",
+    path: "/books/:id",
     element: <ViewBook />
   },
   {

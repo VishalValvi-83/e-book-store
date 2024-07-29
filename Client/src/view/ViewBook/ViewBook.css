@@ -1,0 +1,42 @@
+.view-book-container {
+    margin-top: 80px;
+}
+
+.book-detail-container.price{
+    margin: 20px 0;
+}
+
+.author-name {
+    color: #dc3545;
+}
+.footer-container{
+    border-top: 1px solid #838383;
+}
+
+@media screen and (min-width:640px) {
+    .book-detail-container{
+        padding-top: 10px;
+    }
+    .book-detail-heading{
+        margin: 15px 0;
+    }
+    .footer-container{
+        margin-top: 15px;
+    }
+    .book-detail-image{
+        height: 400px;
+        width: 100%;
+        object-fit: contain;
+    }
+    .description {
+        font-size: large;
+    }
+    .col-lg-8{
+        padding-left: 25px;
+    }
+    .view-more-btn{
+        position: absolute;
+        top: 15px;
+        right: 10px;
+    }
+}

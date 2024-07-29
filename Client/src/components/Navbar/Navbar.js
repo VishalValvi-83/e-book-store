@@ -23,7 +23,7 @@ function Navbar() {
     }
     return (
         <div>
-            <nav className={`navbar navbar-expand-lg bg-body-tertiary ${theme === "dark" ? "navbar-dark" : "light "}`}>
+            <nav className={`navbar fixed-top navbar-expand-lg bg-body-tertiary ${theme === "dark" ? "navbar-dark" : "light "}`}>
                 <div className="container">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -42,11 +42,11 @@ function Navbar() {
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-success me-3" type="submit">Search</button>
                         </div>
-                        <button className='btn btn-warning' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                        <button className='btn btn-warning me-2' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
                     </div>
                     <label id="theme-toggle-button">
                         <input onClick={swithchTheme} type="checkbox" id="toggle" />
-                        <svg viewBox="0 0 120 40" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 65 40" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                             <g transform="translate(3.5 3.5)" data-name="Component 15 – 1" id="Component_15_1">
 
 

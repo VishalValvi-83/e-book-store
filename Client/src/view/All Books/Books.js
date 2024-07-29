@@ -8,23 +8,24 @@ import toast from 'react-hot-toast'
 
 function Books() {
   const [books, setBooks] = useState([])
-  useEffect(() => {
-    const getBook = async () => {
-      try {
-        toast.loading("Loading Books") 
+  const getBook = async () => {
+    try {
+      toast.loading("Loading Books")
 
-        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
-        setTimeout(() => {
-          toast.dismiss()
-          toast.success("Books fetched successfully")
-          setBooks(response.data.data)
-        }, 1000);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+      setTimeout(() => {
+        toast.dismiss()
+        toast.success("Books fetched successfully")
+        setBooks(response.data.data)
+      }, 1000);
 
-      }
-      catch (err) {
-        console.error(err)
-      }
     }
+    catch (err) {
+      console.error(err)
+    }
+  }
+  useEffect(() => {
+
     getBook();
   }, []);
 
@@ -79,7 +80,7 @@ function Books() {
           <div className="books-list row-cols-1 row row-cols-xl-5 row-cols-md-4 g-4">
             {
               books.map((book, i) => (
-                <Bookcards key={i} {...book} />
+                <Bookcards key={i} {...book} getBook={getBook}/>
               ))
             }
           </div>
