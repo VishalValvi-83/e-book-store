@@ -7,9 +7,9 @@ function Footer() {
         <><footer className="container-fluid mt-4 pt-2">
             <div className='container d-flex flex-column text-center'>
                 <div className="d-flex justify-content-center flex-wrap gap-4 my-3">
-                    <Link href='/' className="footer-link">Home</Link>
-                    <Link href='/books' className="footer-link">Books</Link>
-                    <Link href='/' className="footer-link">About</Link>
+                    <Link to='/' className="footer-link">Home</Link>
+                    <Link to='/books' className="footer-link">Books</Link>
+                    <Link to='/about' className="footer-link">About</Link>
                 </div>
                 <div className="d-flex justify-content-center mb-3 flex-wrap gap-4">
                     <a href='/'>
