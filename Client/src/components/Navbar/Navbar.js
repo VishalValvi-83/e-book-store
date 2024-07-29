@@ -2,7 +2,22 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import Login from '../Login/Login'
+import toast from 'react-hot-toast';
 function Navbar() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('currentUser');
+        toast.success("Logout successfully")
+        setIsLoggedIn(false);
+    }
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     const element = document.documentElement
     useEffect(() => {
@@ -16,7 +31,7 @@ function Navbar() {
             localStorage.removeItem("theme", "light")
             document.body.classList.remove("dark")
         }
-    }, [theme,  element.classList])
+    }, [theme, element.classList])
 
     const swithchTheme = () => {
         setTheme(theme === "light" ? "dark" : "light")
@@ -42,7 +57,11 @@ function Navbar() {
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-success me-3" type="submit">Search</button>
                         </div>
-                        <button className='btn btn-warning me-2' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                        {isLoggedIn ? (
+                            <button className='btn btn-warning me-2' type="button" onClick={handleLogout}>Logout</button>
+                        ) : (
+                            <button className='btn btn-warning me-2' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                        )}
                     </div>
                     <label id="theme-toggle-button">
                         <input onClick={swithchTheme} type="checkbox" id="toggle" />
