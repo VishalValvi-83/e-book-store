@@ -1,51 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Banner from '../../components/Banner/Banner'
 import Footer from '../../components/Footer/Footer'
 import Bookcards from '../../components/Bookscard/Bookcards'
 import BookList from './../../BookList.json'
 import Login from '../../components/Login/Login'
+import toast from 'react-hot-toast'
+import axios from 'axios'
 
 function Home() {
+  const [books, setBooks] = useState([])
+  const getBook = async () => {
+    try {
+      toast.loading("Loading Books")
 
-  const freeBooks = BookList.ebooks.filter((data) => data.category === "free")
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+      setTimeout(() => {
+        toast.dismiss()
+        toast.success("Books fetched successfully")
+        setBooks(response.data.data)
+      }, 1000);
+
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
+  useEffect(() => {
+
+    getBook();
+  }, []);
+
+
   return (
     <>
       <Navbar />
-      <Login/>
+      <Login />
       <Banner />
       <div className='container p-3 shadow'>
         <h1 className='my-3'>Books Available at free</h1>
         <div className='row row-cols-1 row-cols-md-4 g-4'>
           {
-            freeBooks.map((book, i) => {
-              const {
-                id,
-                title,
-                image_url,
-                author,
-                publication_year,
-                genre,
-                language,
-                category,
-                publisher,
-                description
-              } = book
-              return (<Bookcards
-                key={i}
-                id={id}
-                title={title}
-                image_url={image_url}
-                author={author}
-                publication_year={publication_year}
-                genre={genre}
-                language={language}
-                category={category}
-                publisher={publisher}
-                description={description}
-              />
-              )
-            })
+            books.slice(0, 4).map((book, i) => (
+              <Bookcards key={i} {...book} />
+            ))
           }
         </div>
       </div>
