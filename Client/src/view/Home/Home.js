@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Banner from '../../components/Banner/Banner'
 import Footer from '../../components/Footer/Footer'
@@ -36,8 +37,8 @@ function Home() {
       <Navbar />
       <Login />
       <Banner />
-      <div className='container p-3 shadow'>
-        <h3 className='my-3'>Recently published</h3>
+      <div className='container mt-4 home-book-cards p-3 shadow'>
+        <h4 className='p-2'>Recently published</h4>
         <div className='row row-cols-1 row-cols-md-4 g-4'>
           {
             books.slice(0, 4).map((book, i) => (
