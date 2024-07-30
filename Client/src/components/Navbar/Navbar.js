@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import Login from '../Login/Login'
+import Logo from './Reading glasses-cuate.svg';
 import toast from 'react-hot-toast';
 function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const user = localStorage.getItem('currentUser');
 
-    
-    const authUser = ()=>{ 
-        if(!user){
+
+    const authUser = () => {
+        if (!user) {
             toast.error("Please Login First")
             setTimeout(() => {
                 toast.dismiss()
-                window.location.href='/signup'
+                window.location.href = '/signup'
             }, 1000);
-           
-            
-        }else{
-             window.location.href='/books'
+
+
+        } else {
+            window.location.href = '/books'
         }
     }
     useEffect(() => {
@@ -58,8 +59,9 @@ function Navbar() {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
+                    <Link className="navbar-brand p-0 m-0" to="/"><img src={Logo} alt="Logo" height="40" class="d-inline-block align-text-top" /></Link>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <Link className="navbar-brand" href="/">Books</Link>
+                        
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
@@ -68,10 +70,6 @@ function Navbar() {
                                 <Link className="nav-link" onClick={authUser}>Books</Link>
                             </li>
                         </ul>
-                        <div className="d-flex" role="search">
-                            <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-success me-3" type="submit">Search</button>
-                        </div>
                         {isLoggedIn ? (
                             <button className='btn btn-danger me-2' type="button" onClick={handleLogout}>Logout</button>
                         ) : (

@@ -8,6 +8,8 @@ import toast from 'react-hot-toast'
 
 function Books() {
   const [books, setBooks] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filteredBooks, setFilteredBooks] = useState([])
   const getBook = async () => {
     try {
       toast.loading("Loading Books")
@@ -17,6 +19,7 @@ function Books() {
         toast.dismiss()
         toast.success("Books fetched successfully")
         setBooks(response.data.data)
+        setFilteredBooks(response.data.data)
       }, 1000);
 
     }
@@ -24,11 +27,20 @@ function Books() {
       console.error(err)
     }
   }
+
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value
+    setSearchTerm(searchTerm)
+    const filteredBooks = books.filter((book) => {
+      return (book.author && book.author.toLowerCase().includes(searchTerm)) ||
+        (book.title && book.title.toLowerCase().includes(searchTerm))
+    })
+    setFilteredBooks(filteredBooks)
+  }
   useEffect(() => {
 
     getBook();
   }, []);
-
 
   return (
     <>
@@ -39,39 +51,14 @@ function Books() {
           <div class="w-100 iq-search-filter">
             <ul class="list-inline p-0 gap-4 d-flex flex-wrap justify-content-center search-menu-options">
               <li class="search-menu-opt">
-                <select class="form-control form-select form-search-control bg-white border-0" >
-                  <option defaultValue="All">All</option>
-                  <option>A Books</option>
-                  <option>the Sun</option>
-                  <option>Harsh book</option>
-                  <option>People book</option>
-                  <option>the Fog</option>
+                <select class="form-control form-select form-search-control bg-white border-0" onChange={handleSearch}>
+                  <option value="">All</option>
+                  <option value="author">Author</option>
+                  <option value="title">Title</option>
                 </select>
               </li>
               <li class="search-menu-opt">
-                <select class="form-control form-select form-search-control bg-white border-0">
-                  <option defaultValue="Genres">Genres</option>
-                  <option>General</option>
-                  <option>History</option>
-                  <option>Horror</option>
-                  <option>Fantasy</option>
-                  <option>Literary</option>
-                  <option>Manga</option>
-                </select>
-              </li>
-              <li class="search-menu-opt">
-                <input type='number' class="form-control form-input bg-white border-0" placeholder='Search by year' />
-              </li>
-              <li class="search-menu-opt">
-                <select class="form-control form-select bg-white border-0">
-                  <option selected>Author</option>
-                  <option>Milesiy Yor</option>
-                  <option>Ira Membrit</option>
-                  <option>Anna Mull</option>
-                  <option>John Smith</option>
-                  <option>David King</option>
-                  <option>Kusti Franti</option>
-                </select>
+                <input type="text" class="form-control form-search-control bg-white border-0" onChange={handleSearch} placeholder="Search" />
               </li>
               <span type="submit" class="btn btn-outline-danger btn-search">Search</span>
             </ul>
@@ -79,8 +66,8 @@ function Books() {
           </div>
           <div className="books-list row-cols-1 row row-cols-xl-5 row-cols-md-4 g-4">
             {
-              books.map((book, i) => (
-                <Bookcards key={i} {...book} getBook={getBook}/>
+              filteredBooks.map((book, i) => (
+                <Bookcards key={i} {...book} getBook={getBook} />
               ))
             }
           </div>
