@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 import cors from 'cors'
 import mongoose from 'mongoose';
-import { getBook } from './controllers/book_controller.js';
+import { getBook, postBook } from './controllers/book_controller.js';
 import { postLogin, postSignup } from './controllers/User.js';
 
 const app = express();
@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/books", getBook)
+app.post("/book", postBook)
 app.post("/signup", postSignup)
 app.post("/login",postLogin)
 

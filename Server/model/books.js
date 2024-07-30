@@ -12,7 +12,7 @@ const bookSchema = new Schema({
     contributor: { type: String, required: true },
     age_group: {
         type: String,
-        required: true
+        required: false
     }
 }
 );

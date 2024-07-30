@@ -10,9 +10,23 @@ const getBook = async (req, res) => {
             data: transactions
         });
     } catch (err) {
+        res.json({ success: false, message: "Failed to fetch books", error: err.message });
 
     }
 }
 
-export { getBook }
+const postBook = async (req, res) => {
+    const book = new Books(req.body);
+    try {
+        await book.save();
+        res.json({ success: true, message: "Book added successfully", data: book });
+    } catch (err) {
+        res.json({ success: false, message: "Failed to add book", error: err.message });
+    }
+}
+
+export {
+    getBook,
+    postBook
+}
 
