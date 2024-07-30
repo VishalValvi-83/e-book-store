@@ -38,6 +38,7 @@ function Navbar() {
     const element = document.documentElement
     useEffect(() => {
         if (theme === "dark") {
+            document.body.classList.remove("light")
             element.classList.add("dark")
             localStorage.setItem("theme", "dark")
             document.body.classList.add("dark")
@@ -45,6 +46,7 @@ function Navbar() {
         } else {
             element.classList.remove("dark")
             localStorage.setItem("theme", "light")
+            document.body.classList.remove("dark")
             document.body.classList.add("light")
         }
     }, [theme, element.classList])
@@ -67,7 +69,10 @@ function Navbar() {
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" onClick={authUser}>Books</Link>
+                                <Link className="nav-link active" onClick={authUser}>Books</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/about">About</Link>
                             </li>
                         </ul>
                         {isLoggedIn ? (

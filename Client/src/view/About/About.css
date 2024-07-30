@@ -27,16 +27,14 @@
     margin: 0 auto;
 }
 
-.light .about-mission-container {
-    padding: 35px 10px;
-    background-color: #f3f3f3;
-
-}
-
 .dark .about-mission-container {
+    padding: 30px 10px;
     background-color: #202020;
 }
-
+.light .about-mission-container {
+    padding: 30px 10px;
+    background-color: #eeeeee;
+}
 .mission-card {
     height: 300px ;
     padding: 30px;
