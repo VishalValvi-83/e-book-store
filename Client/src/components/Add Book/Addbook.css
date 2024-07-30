@@ -1,0 +1,21 @@
+.add-form-container{
+    margin-top: 80px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+.dark .add-form-container{
+    background-color: #373737;
+    color: #ffffff;
+
+}
+
+.light .add-form-container{
+    background-color: #ffe3e3;
+    color: #202020;
+}
+@media screen and (max-width:630px) {
+    .add-form-container{
+        width: 100%;
+    }
+}

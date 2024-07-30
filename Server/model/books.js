@@ -9,11 +9,14 @@ const bookSchema = new Schema({
     language: { type: String, required: true },
     description: { type: String, required: false },
     image_url: { type: String, required: true },
-    contributor: { type: String, required: true },
+    contributor: { type: String, required: false },
     age_group: {
         type: String,
         required: false
     }
+},
+{
+    timestamps : true
 }
 );
 const Books = model('Books', bookSchema);
