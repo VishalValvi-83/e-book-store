@@ -10,14 +10,12 @@ import axios from 'axios'
 
 function Home() {
   const [books, setBooks] = useState([])
+  const [user, setUser] = useState('')
   const getBook = async () => {
     try {
-      toast.loading("Loading Books")
-
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
       setTimeout(() => {
         toast.dismiss()
-        toast.success("Books fetched successfully")
         setBooks(response.data.data)
       }, 1000);
 
@@ -27,10 +25,20 @@ function Home() {
     }
   }
   useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+    if (currentUser) {
+      setUser(currentUser)
+      toast.success('Welcome Back'+ currentUser.name)
+    }
+
+    if (!currentUser) {
+      window.location.href = '/signup'
+    }
 
     getBook();
   }, []);
 
+console.log(user);
 
   return (
     <>
@@ -39,14 +47,14 @@ function Home() {
       <Banner />
       <div className='container-fluid mt-4 home-book-cards p-3 '>
         <div className='container .container-bs'>
-        <h1 className='p-2 text-center'>Favorite Reads</h1>
-        <div className='row row-cols-1 row-cols-md-4 g-3'>
-          {
-            books.slice(40, 44).map((book, i) => (
-              <Bookcards key={i} {...book} />
-            ))
-          }
-        </div>
+          <h1 className='p-2 text-center'>Favorite Reads</h1>
+          <div className='row row-cols-1 row-cols-md-4 g-3'>
+            {
+              books.slice(40, 44).map((book, i) => (
+                <Bookcards key={i} {...book} />
+              ))
+            }
+          </div>
         </div>
       </div>
       <Footer />

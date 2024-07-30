@@ -12,8 +12,8 @@ function Books() {
   const [searchTerm, setSearchTerm] = useState('')
   const [filteredBooks, setFilteredBooks] = useState([])
   const [visibleBooks, setVisibleBooks] = useState(10)
-  const user = localStorage.getItem('currentUser');
-  
+  const [user, setUser] = useState(null)
+
   const getBook = async () => {
     try {
       toast.loading("Loading Books")
@@ -47,7 +47,10 @@ function Books() {
   }
 
   useEffect(() => {
-
+    const storedUser = localStorage.getItem('currentUser')
+    if (storedUser) {
+      setUser(JSON.parse(storedUser))
+    }
     getBook();
   }, []);
   console.log(searchTerm)
@@ -69,10 +72,12 @@ function Books() {
               <li className="search-menu-opt">
                 <input type="text" className="form-control form-search-control bg-white border-0" onChange={handleSearch} placeholder="Search" />
               </li>
-              <li className="search-menu-opt">
-              <Link to='/book' className="btn btn-danger">Add New Book</Link>
-              </li>
-            </ul> 
+              {user && user.role === 'admin' && (
+                <li className="search-menu-opt">
+                  <Link to='/add/book' className="btn btn-danger">Add New Book</Link>
+                </li>
+              )}
+            </ul>
           </div>
         </div>
         <div className='container p-4 shadow'>

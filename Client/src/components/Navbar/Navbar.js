@@ -6,6 +6,7 @@ import Logo from './Reading glasses-cuate.svg';
 import toast from 'react-hot-toast';
 function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [regUser, setRegUser] = useState(null);
     const user = localStorage.getItem('currentUser');
 
 
@@ -26,7 +27,9 @@ function Navbar() {
         const currentUser = localStorage.getItem('currentUser');
         if (currentUser) {
             setIsLoggedIn(true);
+            setRegUser(JSON.parse(currentUser))
         }
+
     }, []);
 
     const handleLogout = () => {
@@ -63,7 +66,7 @@ function Navbar() {
                     </button>
                     <Link className="navbar-brand p-0 m-0" to="/"><img src={Logo} alt="Logo" height="40" class="d-inline-block align-text-top" /></Link>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        
+
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
@@ -74,6 +77,17 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/about">About</Link>
                             </li>
+                            {regUser && regUser.role === 'admin' && (
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin Controllers
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><Link class="dropdown-item" to="/add/book">Add New Books</Link></li>
+                                    </ul>
+                                </li>
+
+                            )}
                         </ul>
                         {isLoggedIn ? (
                             <button className='btn btn-danger me-2' type="button" onClick={handleLogout}>Logout</button>

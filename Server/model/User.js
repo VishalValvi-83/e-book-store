@@ -31,6 +31,11 @@ const userSchema = new Schema({
     age: {
         type: Number,
         required: true
+    },
+    role:{
+        type: String,
+        enum: ['user', 'admin'],
+        required: true,
     }
 }, {
     timestamps: true

@@ -48,7 +48,7 @@ function Footer() {
                 </div>
 
                 <aside>
-                    <span className='copyright'> &copy; Copyright  {new Date().getFullYear()} - All right reserved by VBook.</span>
+                    <span className='copyright'> &copy; Copyright  {new Date().getFullYear()} - All right reserved by Bookland.</span>
                 </aside>
             </div>
         </footer></>

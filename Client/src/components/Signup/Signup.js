@@ -11,7 +11,8 @@ function Signup() {
         email: '',
         age: '',
         mobile: '',
-        password: ''
+        password: '',
+        role: '',
     })
 
     const signup = async () => {
@@ -20,16 +21,18 @@ function Signup() {
             email: user.email,
             age: user.age,
             mobile: user.mobile,
-            password: user.password
+            password: user.password,
+            role: user.role,
         })
         if (response.data.success) {
-            toast.success(response.data.message)
+            toast.success(`${user.role.toUpperCase()} Registered Successfully`)
             setUser({
                 name: '',
                 mobile: '',
                 age: '',
                 email: '',
-                password: ''
+                password: '',
+                role: '',
             })
             toast.loading("Redirecting to Login")
             setTimeout(() => {
@@ -49,7 +52,7 @@ function Signup() {
             <div className='container-fluid sigup-form-container'>
                 <div className='container-md shadow border rounded signup-form mt-5 py-4'>
                     <h3>Signup</h3>
-                    <div className='my-5 mx-3'>
+                    <div className='my-3 mx-3'>
                         <div className='form-group mb-3'>
                             <label for="full_name">Name </label>
                             <input type="text" class="form-control " id="full_name" placeholder="Enter name"
@@ -83,6 +86,15 @@ function Signup() {
                                 setUser({ ...user, password: e.target.value })
                             }} />
                             <label className='label' for="floatingInput">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" value={user.role} onChange={(e) => {
+                                    setUser({ ...user, role: e.target.value })
+                                }} id="floatingSelect" aria-label="Floating label select example">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                            <label for="floatingSelect">Select your Role</label>
                         </div>
                         <button type='button' className='btn btn-warning' onClick={signup}>Sign Up</button>
                     </div>
