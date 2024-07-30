@@ -38,7 +38,7 @@ function ViewBook() {
         <>
             <Navbar />
             <div className='container-fluid view-book-container'>
-                <div className='container book-detail-container shadow'>
+                <div className='container .container-bs book-detail-container shadow'>
                     <h4 className='book-detail-heading'>Book Details</h4>
                     <hr />
                     <div className='row p-4'>

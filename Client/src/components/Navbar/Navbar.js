@@ -44,8 +44,8 @@ function Navbar() {
 
         } else {
             element.classList.remove("dark")
-            localStorage.removeItem("theme", "light")
-            document.body.classList.remove("dark")
+            localStorage.setItem("theme", "light")
+            document.body.classList.add("light")
         }
     }, [theme, element.classList])
 

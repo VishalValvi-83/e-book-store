@@ -8,7 +8,7 @@ import Signup from './components/Signup/Signup';
 import { Toaster } from 'react-hot-toast';
 import ViewBook from './view/ViewBook/ViewBook';
 import Login from './components/Login/Login';
-import About from './About/About';
+import About from './view/About/About';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

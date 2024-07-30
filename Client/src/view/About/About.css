@@ -1,0 +1,64 @@
+.content-header {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/05/04/40/40/1000_F_504404010_Li0drda7VOTZsxJLWY1dbID2CinSu3c1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.content-header .about-us-heading {
+    background-color: rgba(243, 229, 147, 0.696);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+}
+
+.about-heading {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.about-text {
+    font-family: cursive;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.light .about-mission-container {
+    padding: 35px 10px;
+    background-color: #f3f3f3;
+
+}
+
+.dark .about-mission-container {
+    background-color: #202020;
+}
+
+.mission-card {
+    height: 300px ;
+    padding: 30px;
+    border-radius: 10px;
+    transition: all ease .3s;
+}
+
+.dark .mission-card {
+    background-color: #333333;
+    color: #fff;
+}
+
+.light .mission-card {
+    background-color: #ffffff;
+    color: #1b1b1b;
+
+}
+
+.mission-card:hover svg {
+    color: #df224b;
+    transition: all ease .3s;
+}
+.mission-card:hover{
+    transform: scale(1.05);
+}

@@ -38,14 +38,14 @@ function Bookcards({
               <img class="img-fluid rounded" src={InvalidImage} alt="" />
             </Link>
           </div>
-          <div class="col-6 p-1">
+          <div class="col-6 ps-2">
             <div class="mb-2">
               <h6 class="card-title">{shortenedTitle}</h6>
               <p class="font-size-13 m-0 author-publication lh-1 ">{shortendAuthor}</p>
               <p className="card-text genre">{language}</p>
             </div>
-            <div class="price">
-              <h6>{price}</h6>
+            <div class="price mx-2">
+              <h6>₹{price}</h6>
             </div>
             <Link to={`/books/${_id}`} className="btn lh-1 btn-outline-danger">Borrow</Link>
           </div>

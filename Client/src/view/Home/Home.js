@@ -37,14 +37,16 @@ function Home() {
       <Navbar />
       <Login />
       <Banner />
-      <div className='container mt-4 home-book-cards p-3 shadow'>
-        <h4 className='p-2'>Recently published</h4>
-        <div className='row row-cols-1 row-cols-md-4 g-4'>
+      <div className='container-fluid mt-4 home-book-cards p-3 '>
+        <div className='container .container-bs'>
+        <h1 className='p-2 text-center'>Favorite Reads</h1>
+        <div className='row row-cols-1 row-cols-md-4 g-3'>
           {
-            books.slice(0, 4).map((book, i) => (
+            books.slice(40, 44).map((book, i) => (
               <Bookcards key={i} {...book} />
             ))
           }
+        </div>
         </div>
       </div>
       <Footer />
