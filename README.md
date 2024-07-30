@@ -46,5 +46,5 @@ npm start
 ```
 ### Site View
 -------------
-![Home](./Home_Page.png)
-![Login](./About_page.png)
+![Home](./Client/Home_Page.png)
+![Login](./Client/About_page.png)
