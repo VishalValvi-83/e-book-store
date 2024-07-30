@@ -3,7 +3,7 @@
     color: #fff;
 }
 
-.dark .card-body {
+.dark .card {
     background-color: #202020;
     color: #fff;
 }
@@ -13,7 +13,7 @@
     color: #202020;
 }
 
-.light .card-body {
+.light .card {
     background-color: #fff;
 }
 

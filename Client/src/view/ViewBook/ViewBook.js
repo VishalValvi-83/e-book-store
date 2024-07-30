@@ -33,7 +33,8 @@ function ViewBook() {
         }
         bData();
     }, [id]);
-
+    let newPrice = !book.price? Math.floor(Math.random() * 99) + 10: book.price;
+  console.log(newPrice)
 
     return (
         <>
@@ -55,7 +56,7 @@ function ViewBook() {
                             <div className='footer-container py-4'>
                                 <small> <span className='author-name'>Author</span> : {book.author}</small>
 
-                                <h5 className='price'>Price: ₹{book.price}</h5>
+                                <h5 className='price'>Price: ₹{newPrice}</h5>
                                 <a href="/" className="btn btn-outline-danger">Borrow</a>
                             </div>
                         </div>

@@ -5,7 +5,22 @@ import Login from '../Login/Login'
 import toast from 'react-hot-toast';
 function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const user = localStorage.getItem('currentUser');
 
+    
+    const authUser = ()=>{ 
+        if(!user){
+            toast.error("Please Login First")
+            setTimeout(() => {
+                toast.dismiss()
+                window.location.href='/signup'
+            }, 1000);
+           
+            
+        }else{
+             window.location.href='/books'
+        }
+    }
     useEffect(() => {
         const currentUser = localStorage.getItem('currentUser');
         if (currentUser) {
@@ -50,7 +65,7 @@ function Navbar() {
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/books">Books</Link>
+                                <Link className="nav-link" onClick={authUser}>Books</Link>
                             </li>
                         </ul>
                         <div className="d-flex" role="search">
@@ -58,7 +73,7 @@ function Navbar() {
                             <button className="btn btn-success me-3" type="submit">Search</button>
                         </div>
                         {isLoggedIn ? (
-                            <button className='btn btn-warning me-2' type="button" onClick={handleLogout}>Logout</button>
+                            <button className='btn btn-danger me-2' type="button" onClick={handleLogout}>Logout</button>
                         ) : (
                             <button className='btn btn-warning me-2' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
                         )}

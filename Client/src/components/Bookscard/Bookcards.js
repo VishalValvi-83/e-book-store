@@ -13,7 +13,12 @@ function Bookcards({
   price
 }) {
 
-  
+  // if price null then random generate 2 digit value
+
+  let newPrice = price || Math.floor(Math.random() * 99) + 10;
+
+  let InvalidImage = image_url ? image_url : "https://www.kindpng.com/picc/m/725-7251301_book-cover-placeholder-hd-png-download.png";
+  console.log(newPrice)
   let shortenedTitle = title;
   let shortendAuthor = author;
 
@@ -30,7 +35,7 @@ function Bookcards({
         <div class="  d-flex">
           <div class="col-6 p-0">
             <Link to={`/books/${_id}`}>
-              <img class="img-fluid rounded" src={image_url} alt="" />
+              <img class="img-fluid rounded" src={InvalidImage} alt="" />
             </Link>
           </div>
           <div class="col-6 p-1">
@@ -40,9 +45,9 @@ function Bookcards({
               <p className="card-text genre">{language}</p>
             </div>
             <div class="price">
-              <h6>{price}</h6>
+              <h6>{newPrice}</h6>
             </div>
-            <a href="/" className="btn lh-1 btn-outline-danger">Borrow</a>
+            <Link to="/" className="btn lh-1 btn-outline-danger">Borrow</Link>
           </div>
         </div>
       </div>
