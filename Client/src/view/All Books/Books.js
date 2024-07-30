@@ -41,7 +41,7 @@ function Books() {
 
     getBook();
   }, []);
-
+  console.log(searchTerm)
   return (
     <>
       <Navbar />
