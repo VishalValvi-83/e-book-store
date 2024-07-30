@@ -8,13 +8,16 @@ function Bookcards({
   author,
   category,
   language,
-  price
+  price,
+  book_image
 }) {
 
-  // if price null then random generate 2 digit value
 
 
-  let InvalidImage = image_url ? image_url : "https://img.freepik.com/free-vector/red-text-book-closed-icon_18591-82397.jpg?size=626&ext=jpg&ga=GA1.1.1437855638.1705562597&semt=ais_hybrid";
+  let InvalidImage = image_url ? image_url : book_image;
+  if (!InvalidImage || InvalidImage === "") {
+    InvalidImage = 'https://thecharulathapublications.com/wp-content/uploads/2022/11/book-placeholder.png';
+  }
 
   let shortenedTitle = title;
   let shortendAuthor = author;
@@ -44,7 +47,7 @@ function Bookcards({
             <div class="price">
               <h6>{price}</h6>
             </div>
-            <Link to="/" className="btn lh-1 btn-outline-danger">Borrow</Link>
+            <Link to={`/books/${_id}`} className="btn lh-1 btn-outline-danger">Borrow</Link>
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ function Home() {
       <Login />
       <Banner />
       <div className='container p-3 shadow'>
-        <h1 className='my-3'>Books Available at free</h1>
+        <h3 className='my-3'>Recently published</h3>
         <div className='row row-cols-1 row-cols-md-4 g-4'>
           {
             books.slice(0, 4).map((book, i) => (

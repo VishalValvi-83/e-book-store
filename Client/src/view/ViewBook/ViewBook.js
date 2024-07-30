@@ -33,8 +33,6 @@ function ViewBook() {
         }
         bData();
     }, [id]);
-    let newPrice = !book.price? Math.floor(Math.random() * 99) + 10: book.price;
-  console.log(newPrice)
 
     return (
         <>
@@ -45,7 +43,7 @@ function ViewBook() {
                     <hr />
                     <div className='row p-4'>
                         <div className='col-4 col-md-4 d-flex justify-content-center align-item-center'>
-                            <img src={book.image_url} alt={book.title} className='img-fluid book-detail-image rounded' />
+                            <img src={book.image_url ? book.image_url : book.book_image} alt={book.title} className='img-fluid book-detail-image rounded' />
                         </div>
                         <div className='col-lg-8 col-md-8'>
                             <h2>{book.title}</h2>
@@ -54,10 +52,12 @@ function ViewBook() {
                             <p className='description'>{book.description}</p>
 
                             <div className='footer-container py-4'>
-                                <small> <span className='author-name'>Author</span> : {book.author}</small>
 
-                                <h5 className='price'>Price: ₹{newPrice}</h5>
-                                <a href="/" className="btn btn-outline-danger">Borrow</a>
+                                <small> <span className='author-name'>Author</span> : {book.author}</small>
+                                <p className='text-warning'>{book.category}</p>
+
+                                <h5 className='price'>Price: ₹{book.price}</h5>
+                                <a href="/" className="btn mt-3 btn-outline-danger">Borrow</a>
                             </div>
                         </div>
                     </div>

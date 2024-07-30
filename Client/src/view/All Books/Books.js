@@ -10,6 +10,7 @@ function Books() {
   const [books, setBooks] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [filteredBooks, setFilteredBooks] = useState([])
+  const [visibleBooks, setVisibleBooks] = useState(10)
   const getBook = async () => {
     try {
       toast.loading("Loading Books")
@@ -37,6 +38,11 @@ function Books() {
     })
     setFilteredBooks(filteredBooks)
   }
+
+  const loadMore = () => {
+    setVisibleBooks(visibleBooks + 10)
+  }
+
   useEffect(() => {
 
     getBook();
@@ -46,8 +52,8 @@ function Books() {
     <>
       <Navbar />
       <div className="container-fluid mt-4">
-        <div className='container p-4 shadow'>
-          <h3 className='text-center mb-3'>Search Books By Category</h3>
+        <div className='search-field mt-5 pt-2'>
+        <h3 className='text-center mb-3'>Search Books By Category</h3>
           <div class="w-100 iq-search-filter">
             <ul class="list-inline p-0 gap-4 d-flex flex-wrap justify-content-center search-menu-options">
               <li class="search-menu-opt">
@@ -64,12 +70,22 @@ function Books() {
             </ul>
 
           </div>
+        </div>
+        <div className='container p-4 shadow'>
+          
           <div className="books-list row-cols-1 row row-cols-xl-5 row-cols-md-4 g-4">
             {
-              filteredBooks.map((book, i) => (
+              filteredBooks.slice(0, visibleBooks).map((book, i) => (
                 <Bookcards key={i} {...book} getBook={getBook} />
               ))
             }
+          </div>
+          <div className='d-flex mt-4 justify-content-center'>
+          {visibleBooks < filteredBooks.length && (
+            <button className="btn btn-danger" onClick={loadMore}>
+              Load More
+            </button>
+          )}
           </div>
         </div>
       </div>
