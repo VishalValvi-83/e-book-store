@@ -13,7 +13,7 @@ function Home() {
   const [user, setUser] = useState('')
   const getBook = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}books`)
       setTimeout(() => {
         toast.dismiss()
         setBooks(response.data.data)

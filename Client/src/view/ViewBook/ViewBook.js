@@ -14,7 +14,7 @@ function ViewBook() {
 
     useEffect(() => {
         const bData = async () => {
-            await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+            await axios.get(`${process.env.REACT_APP_BACKEND_URL}books`)
 
                 .then(response => {
                     const book = response.data.data.find(b => b._id === id);

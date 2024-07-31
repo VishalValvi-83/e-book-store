@@ -8,7 +8,7 @@ function Login() {
 
     const login = async () => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}login`, {
                 email: email,
                 password: password
             })

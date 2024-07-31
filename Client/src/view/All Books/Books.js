@@ -18,7 +18,7 @@ function Books() {
     try {
       toast.loading("Loading Books")
 
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`)
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}books`)
       setTimeout(() => {
         toast.dismiss()
         toast.success("Books fetched successfully")

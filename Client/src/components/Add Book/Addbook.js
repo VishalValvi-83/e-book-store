@@ -28,7 +28,7 @@ function Addbook() {
         };
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/book`, newBook);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}book`, newBook);
             setTitle('');
             setAuthor('');
             setPublisher('');

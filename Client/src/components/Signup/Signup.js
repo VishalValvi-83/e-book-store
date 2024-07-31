@@ -16,7 +16,7 @@ function Signup() {
     })
 
     const signup = async () => {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}signup`, {
             name: user.name,
             email: user.email,
             age: user.age,
