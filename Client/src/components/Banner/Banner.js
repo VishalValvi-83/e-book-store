@@ -21,7 +21,7 @@ function Banner() {
     }
 
     return (
-        <div className='container'>
+        <div className='container mt-5'>
             <div className='row'>
                 <div className='col-md-6 order-1  left d-flex justify-content-center flex-column'>
                     <h1 className='my-3'>Discover Your Next <br /> <span className=' text-danger'>Favorite Read</span></h1>
